@@ -1,28 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
-import "./App.css";
-import Search from "./Search";
-import Form from "./Form";
-import SwapiFilms from "./SwapiFilms";
-import SwapiCharacters from "./SwapiCharacters";
-import GithubProfile from "./GithubProfile";
-import { Routes, Route } from "react-router";
-import Layout from "./Layout";
-import Home from "./Home";
+import Navbar from "./components/Navbar";
+import ProjectList from "./pages/ProjectList";
+import NewProject from "./pages/NewProject";
 
+// No router yet: every "page" is stacked on one screen.
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="films" element={<SwapiFilms />} />
-        <Route path="people" element={<SwapiCharacters />} />
-      </Route>
-    </Routes>
+    <>
+      <Navbar />
+      <main>
+        <h1>Projects</h1>
+        <NewProject />
+        <ProjectList />
+      </main>
+    </>
   );
 }
 

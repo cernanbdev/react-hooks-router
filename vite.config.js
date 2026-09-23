@@ -1,10 +1,11 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import mockApi from './server/mockApi.js'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), mockApi()],
   test: {
     // `describe`, `it`, `expect` etc. are available without importing them,
     // which also lets React Testing Library auto-unmount between tests.
